@@ -1,0 +1,51 @@
+<?php
+$baseUri = $this->url->getBaseUri();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Quiz - Paulo
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- styles scripts includes -->
+        <link href="<?= $baseUri ?>vendor/materialize-v0.100.2/materialize/css/materialize.min.css" type="text/css" rel="stylesheet">
+
+        <!-- arquivo de configuração de estilos -->
+        <link href="<?= $baseUri ?>css/admin.css" type="text/css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper green">
+                <a href="#" class="brand-logo center">Bem vindo ao Quiz!!</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h4>Em um dia qualquer, que serie mais representa você ? =]</h4>
+                    <p class="texto-series">House of Cards, Game of Thrones, Lost, Breaking Bad ou Silicon Valley</p>
+                    <p class="texto-series">Responda as questões abaixo para saber...</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                </div>
+            </div>
+            <div class="container">
+                <?php echo $this->getContent(); ?>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- jquery validate includes -->
+        <script src="<?= $baseUri ?>vendor/jquery-validation/lib/jquery.js"></script>
+        <script src="<?= $baseUri ?>vendor/jquery-validation/dist/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?= $baseUri ?>vendor/materialize-v0.100.2/materialize/js/materialize.js"></script>
+        <script src="<?= $baseUri ?>js/admin.js"></script>
+    </body>
+</html>

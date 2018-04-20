@@ -1,0 +1,42 @@
+<?php
+$baseUri = $this->url->getBaseUri();
+?>
+<?php if(@count($resultado) > 0) { ?>
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper">
+            <div class="col s2">
+                <img src="<?=$baseUri.$resultado["serie"]["path"]?>" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+                <span class="green-text">
+                    <h5><?=$resultado["serie"]["serie"]?></h5>
+                </span>
+            </div>
+        </div>
+    </div>
+    <a class="btn waves-effect waves-light btn-large green" href="">PESQUISAR NOVAMENTE
+        <i class="material-icons right">arrow_left</i>
+    </a>
+</div>
+<?php }else{ ?>
+<form name="formQuiz" id="formQuiz" action="" method="POST">
+    <?php foreach ($perguntas as $keyPergunta => $pergunta) { ?>
+        <div id="<?=$keyPergunta?>">
+            <h4>Pergunta <?= $keyPergunta ?>:</h4>
+            <h5><?= $pergunta["pergunta"] ?></h5>
+            <?php foreach ($pergunta["alternativas"] as $keyAlternativa => $alternativa) { ?>
+                <div class="row margemquiz">
+                    <p>
+                        <input value="<?= $keyAlternativa ?>" class="with-gap" name="<?= 'pergunta' . $keyPergunta ?>" type="radio" id="<?= $keyPergunta . '-' . $keyAlternativa ?>">
+                        <label class="label-color" for="<?= $keyPergunta . '-' . $keyAlternativa ?>"><?= $alternativa ?></label>
+                    </p>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
+    <button class="btn waves-effect waves-light btn-large green" type="submit">Responder
+        <i class="material-icons right">search</i>
+    </button>
+</form>
+<?php } ?>
