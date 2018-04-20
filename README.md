@@ -2,10 +2,13 @@
 Quiz de testes para processo seletivo
 
 CONFIGURAÇÕES:
+WampServer
 PHP: 5.6
 Phalcon Framework: versão 3.2.3 https://phalconphp.com/pt/
 JQuery: 3.2.1
 CSS: Biblioteca Material Google Design CSS
+Para instalação do phalcon:
+https://olddocs.phalconphp.com/en/3.0.0/reference/install.html
 
 
 Desenvolvido em: 19/04/2018 -> 20/04/2018
